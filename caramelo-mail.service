@@ -1,0 +1,15 @@
+[Unit]
+Description=Caramelo Coin Mail Server
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/www.caramelocoin.com/mail
+ExecStart=/usr/bin/node index.js
+Restart=always
+Environment=NODE_ENV=production
+Environment=PORT=2500
+
+[Install]
+WantedBy=multi-user.target 
