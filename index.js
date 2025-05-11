@@ -21,6 +21,18 @@ app.use(cors({
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Middleware de logging básico
+app.use((req, res, next) => {
+  console.log(`${new Date().toISOString()} - ${req.method} ${req.url}`);
+  next();
+});
+
+// Rota de teste
+app.get('/test', (req, res) => {
+  console.log('Rota de teste acessada');
+  res.json({ status: 'Server is running!' });
+});
+
 // Rate limiting para prevenir spam
 const rateLimit = new Map();
 const RATE_LIMIT_WINDOW = 3600000; // 1 hora em milissegundos
