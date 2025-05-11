@@ -13,7 +13,7 @@ const app = express();
 
 // Configuração dos middlewares
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://167.88.39.138', 'https://caramelocoin.com', 'http://caramelocoin.com'],
+  origin: ['http://localhost:3000', 'http://167.88.39.138', 'http://167.88.39.138:2500', 'https://caramelocoin.com', 'http://caramelocoin.com'],
   methods: ['POST'],
   allowedHeaders: ['Content-Type']
 }));
